@@ -8,10 +8,10 @@ n/a
 
 ## Usage
 Simply press the 'Generate Password' button, and follow the prompts to customize your password length and strength. 
-!(assets/images/screenshot.png)
+
+![click 'generate password' to initialize the prompt window](assets/images/screenshot.png)
 
 ## Credits
-
 N/A
 
 ## License
