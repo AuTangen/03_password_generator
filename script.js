@@ -9,40 +9,37 @@ var special = ['!', '$', '&', '*', '#', '_'];
 
 
 
-// var pass = [];
-// Write password to the #password input
 
 function getRandom(charSet) {
-return charSet[Math.floor(Math.random * charSet.length)];
+return charSet[Math.floor(Math.random() * charSet.length)];
 }
 
-// function writePassword() {
-//   options.passwordLength = Number(window.prompt("Enter password length: 8-128 characters",""));
-//   if(options.passwordLength >= 8 && options.passwordLength <= 128) {
-//     options.lowercase = window.confirm("Would you like your password to contain lowercase letters?");
-//     options.uppercase = window.confirm("Would you like your password to contain uppercase letters?");
-//     options.numbers = window.confirm("Would you like your password to contain numbers?");
-//     options.special = window.confirm("Would you like your password to contain special characters?");
-//     console.log(options.passwordLength);
-//     console.log(options.lowercase);
-//     console.log(options.uppercase);
-//     console.log(options.numbers);
-
-
-//   }
+function writePassword() {
+  options.passwordLength = Number(window.prompt("Enter password length: 8-128 characters",""));
+  if(options.passwordLength >= 8 && options.passwordLength <= 128) {
+    options.lowercase = window.confirm("Would you like your password to contain lowercase letters?");
+    options.uppercase = window.confirm("Would you like your password to contain uppercase letters?");
+    options.numbers = window.confirm("Would you like your password to contain numbers?");
+    options.special = window.confirm("Would you like your password to contain special characters?");
+    
+    var password = generatePassword(options);
+    
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  }
 
   
     
 
-//     else {
-//       alert("please enter a number between 8-128 TRY AGAIN")
+    else {
+      alert("please enter a number between 8-128 TRY AGAIN")
       
-//     }
-//   }
-var result = '';
-var chars = [];
+    }
+  }
+
  function generatePassword(data) {
- 
+  var result = '';
+  var chars = [];
   
   if (data.lowercase) {
   chars = chars.concat(lower)
@@ -64,21 +61,16 @@ var chars = [];
   }
 
   var options =  {
-    passwordLength: [8],
-    lowercase: [true],
-    uppercase: [true],
-    numbers: [true],
-    special: [true]
+    passwordLength: [],
+    lowercase: [],
+    uppercase: [],
+    numbers: [],
+    special: []
   }
-  var password = generatePassword(options);
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-  console.log(password);
- 
+
   
 
 
-// -------------------------------------
 
 
 // Add event listener to generate button
@@ -86,6 +78,4 @@ generateBtn.addEventListener("click", writePassword);
 generateBtn.addEventListener("click", generatePassword);
 
 
-// ------------------------------
-// global arrays- lower, upper, num, special
-// parameters- selectLength, typeLower, typeUpper, typeNumber, typeSpecial
+
