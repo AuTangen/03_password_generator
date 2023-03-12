@@ -26,6 +26,7 @@ function writePassword() {
     
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
+    window.alert("Your new password will appear in the box below. Don't forget to copy and save it!");
   }
 
   
